@@ -42,9 +42,9 @@ class Register extends StatelessWidget {
           Row(
             children: <Widget>[
               Container(
-                  width: 250,
+                  width: 300,
                   height: 40,
-                  margin: EdgeInsets.only(top: 250, left: 60),
+                  margin: EdgeInsets.only(top: 250, left: 40),
                   child: TextInput(
                       hint: "email adress",
                       inputType: TextInputType.emailAddress,
@@ -55,9 +55,9 @@ class Register extends StatelessWidget {
           Row(
             children: <Widget>[
               Container(
-                  width: 250,
+                  width: 300,
                   height: 40,
-                  margin: EdgeInsets.only(top: 300, left: 60),
+                  margin: EdgeInsets.only(top: 300, left: 40),
                   child: TextInput(
                       hint: "username",
                       inputType: TextInputType.name,
@@ -68,9 +68,9 @@ class Register extends StatelessWidget {
           Row(
             children: <Widget>[
               Container(
-                  width: 250,
+                  width: 300,
                   height: 40,
-                  margin: EdgeInsets.only(top: 390, left: 60),
+                  margin: EdgeInsets.only(top: 350, left: 40),
                   child: TextInput(
                       hint: "pass",
                       inputType: TextInputType.text,
@@ -79,11 +79,24 @@ class Register extends StatelessWidget {
             ],
           ),
           Row(
+            children: <Widget>[
+              Container(
+                  width: 300,
+                  height: 40,
+                  margin: EdgeInsets.only(top: 400, left: 40),
+                  child: TextInput(
+                      hint: "repeat Password",
+                      inputType: TextInputType.text,
+                      controller: TextEditingController(),
+                      hintText: "repeat Password"))
+            ],
+          ),
+          Row(
             children: [
               Container(
-                width: 250,
+                width: 300,
                 height: 80,
-                margin: EdgeInsets.only(top: 430, left: 60),
+                margin: EdgeInsets.only(top: 440, left: 40),
                 alignment: Alignment.topCenter,
                 child: ElevatedButton(
                     onPressed: () {},
@@ -98,7 +111,7 @@ class Register extends StatelessWidget {
               Container(
                 width: 250,
                 height: 100,
-                margin: EdgeInsets.only(top: 510, left: 60),
+                margin: EdgeInsets.only(top: 510, left: 40),
                 alignment: Alignment.topCenter,
                 child: Text(
                   "login with",
