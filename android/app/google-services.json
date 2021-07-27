@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "445820091858",
+    "project_id": "e-parcial",
+    "storage_bucket": "e-parcial.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445820091858:android:d6f35b89a2773629095c0b",
+        "android_client_info": {
+          "package_name": "com.example.examen_parcial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445820091858-g4a1ontoorsd9j6qpphi9apgqdrj3ife.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrnfFltvfIeqmGDPeznvG-E2yBcfopjFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445820091858-g4a1ontoorsd9j6qpphi9apgqdrj3ife.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,36 @@
+import 'package:examen_parcial/BLOC/BLOC_user.dart';
+import 'package:examen_parcial/UI/screen/Home.dart';
 import 'package:examen_parcial/UI/widget/gradiente.dart';
+import 'package:examen_parcial/UI/widget/register.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'TextImput.dart';
+import 'googleBoton.dart';
 
 class Inicio extends StatelessWidget {
+  late UserBloc userBloc;
+  final _controllerUsername = TextEditingController();
+  final _controllerHobbies = TextEditingController();
   @override
   Widget build(BuildContext context) {
+    userBloc = BlocProvider.of(context);
+    return _controlSession();
+  }
+
+  Widget _controlSession() {
+    return StreamBuilder(
+        stream: userBloc.authStatus,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData || snapshot.hasError) {
+            return login();
+          } else {
+            return Register();
+          }
+        });
+  }
+
+  Widget login() {
     return Scaffold(
       body: Stack(
         fit: StackFit.loose,
@@ -68,16 +94,18 @@ class Inicio extends StatelessWidget {
           Row(
             children: [
               Container(
-                width: 250,
-                height: 80,
-                margin: EdgeInsets.only(top: 430, left: 60),
-                alignment: Alignment.topCenter,
-                child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('Sign in'),
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.purple, minimumSize: Size(150, 30))),
-              )
+                  width: 250,
+                  height: 80,
+                  margin: EdgeInsets.only(top: 430, left: 60),
+                  alignment: Alignment.topCenter,
+                  child: GoogleBtn(
+                      heightC: 20.0,
+                      widhtC: 80.0,
+                      onPressed: () {
+                        userBloc.signIn().then((UserCredential user) =>
+                            print("usted se a autenticado como:${user.user}"));
+                      },
+                      text: "login"))
             ],
           ),
           Row(

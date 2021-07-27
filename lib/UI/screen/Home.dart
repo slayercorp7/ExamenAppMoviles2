@@ -10,9 +10,9 @@ class Home extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           Container(
-            child: Inicio(),
+            //child: Inicio(),
             //descomentar para visualizar la segunda pantalla y comentar la primera.
-            //child: Register(),
+            child: Register(),
           )
         ],
       ),
